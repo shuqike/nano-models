@@ -1,5 +1,7 @@
-# Data
+# Data files
 *.txt
+*.pkl
+*.bin
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
