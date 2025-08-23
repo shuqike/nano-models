@@ -1,4 +1,6 @@
 # Data files
+**/outputs/*
+**/wandb/*
 *.txt
 *.pkl
 *.bin
