@@ -10,6 +10,7 @@ except ImportError:
 from omegaconf import DictConfig
 from .schemas import Config
 
+
 def set_seed(seed: int):
     random.seed(seed)
     np.random.seed(seed)
@@ -17,12 +18,14 @@ def set_seed(seed: int):
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
 
+
 def make_dataloader(data_cfg):
     # Pseudocode; replace with real datasets
     size = 50000 if data_cfg.name == "cifar10" else 60000
     batch_size = data_cfg.batch_size
     steps = size // batch_size
     return steps
+
 
 def make_model(model_cfg, device: str):
     # Pseudocode; replace with real torch.nn.Module
@@ -34,6 +37,7 @@ def make_model(model_cfg, device: str):
             return max(0.1, 2.0 / (self.dim + 1))
     dim = model_cfg.hidden_dim
     return DummyModel(dim)
+
 
 def train(cfg: DictConfig, pcfg: Config, wandb_run=None) -> Dict[str, float]:
     set_seed(pcfg.trainer.seed)
