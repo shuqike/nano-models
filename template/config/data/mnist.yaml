@@ -1,0 +1,5 @@
+# conf/data/mnist.yaml
+name: mnist
+root: ./data
+batch_size: 128
+num_workers: 4

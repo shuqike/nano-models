@@ -1,0 +1,22 @@
+# conf/config.yaml
+defaults:
+  - data: mnist
+  - model: mlp
+  - trainer: base
+  - _self_
+
+run:
+  name: null        # will be set by coolname if null
+  group: ${data.name}-${model.name}
+
+optim:
+  name: adam
+  lr: 1e-3
+  weight_decay: 0.0
+
+wandb:
+  enable: true
+  project: "mlproj"
+  entity: null
+  tags: ["baseline"]
+  notes: null

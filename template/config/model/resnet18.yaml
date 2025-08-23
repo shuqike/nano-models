@@ -1,0 +1,4 @@
+# conf/model/resnet18.yaml
+name: resnet18
+hidden_dim: 512         # ignored by resnet, retained for uniform schema
+num_classes: 10
